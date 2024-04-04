@@ -1,0 +1,37 @@
+#potfolio>h1{
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 12px;  
+}
+#potfolio{
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+#potfolio>h2{
+  margin:1.7rem 0;
+}
+.portfoli_item h3{
+  display: inline-block;
+
+}
+.titalinfo{
+  padding-left: 5px;
+  font-size: 0.7rem;
+  font-weight: 300;
+
+}
+.profile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile h2{
+  margin: 1.1rem 0;
+}
+.profile a{
+  margin-bottom: 1.1rem;
+}
+
+

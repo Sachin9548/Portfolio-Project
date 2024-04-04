@@ -1,0 +1,25 @@
+footer {
+  background: var(--color-primary-variant);
+}
+.footer_mid {
+  display: flex;
+  justify-content: space-around;
+}
+footer > a {
+  color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.7rem 0rem;
+}
+.footer_socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 0.2rem;
+}
