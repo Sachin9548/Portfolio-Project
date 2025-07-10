@@ -5,6 +5,7 @@ import { FaEarthAmericas } from 'react-icons/fa6';
 import { FaRegFileCode } from 'react-icons/fa6';
 import { SiExpressvpn } from 'react-icons/si';
 import { GrProjects } from 'react-icons/gr';
+import Profile from "../../assets/sachin.png"
 
 export default function About() {
   return (
@@ -16,7 +17,7 @@ export default function About() {
       <div className="container about_container">
         <div className="about_me">
           <div className="about_me_img">
-            <img src="/src/assets/i.png" alt="my img" />
+            <img src={Profile} alt="sachin meshram" />
           </div>
         </div>
         <div className="about_content">
@@ -24,7 +25,7 @@ export default function About() {
             <article className="about_card">
               <SiExpressvpn />
               <h5>experiance</h5>
-              <small>3+ years working</small>
+              <small>1+ years working</small>
             </article>
             {/* <article class="about_card">
               <FaEarthAmericas />
@@ -39,7 +40,7 @@ export default function About() {
           </div>
 
           <p>
-            👋 Hello! I’m Sachin, a dedicated software developer with a love for
+            👋 Hello! I’m Sachin Meshram, a dedicated software developer with a love for
             creating efficient solutions. My journey in the world of code has
             been exhilarating, and I thrive on turning ideas into reality.
           </p>

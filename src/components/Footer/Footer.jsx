@@ -27,10 +27,10 @@ const Footer = () => {
                 <BiDetail /> <a href="#about">about</a>
               </li>
               <li>
-                <FaBookTanakh /> <a href="#expeiance">experiance</a>
+                <FaBookTanakh /> <a href="#experiance">experiance</a>
               </li>
               <li>
-                <GrProjects /> <a href="#potfoli">potfolio</a>
+                <GrProjects /> <a href="#potfolio">potfolio</a>
               </li>
               <li>
                 <IoIosContact />
@@ -39,9 +39,10 @@ const Footer = () => {
             </ul>
 
             <div className="footer_socials">
-              <SiLeetcode /> <a href="">LeetCode</a>
-              <BiCode /> <a href="">GreeksforGreek</a>
-              <BiCodeBlock /> <a href="">hacker rank</a>
+                            <BiCode /> <a href="https://auth.geeksforgeeks.org/user/sachinkhjk">GreeksforGreek</a>
+
+              <SiLeetcode /> <a href="https://leetcode.com/Sachin_9548/">LeetCode</a>
+              <BiCodeBlock /> <a href="https://www.hackerrank.com/profile/sachinm9548">hacker rank</a>
             </div>
           </div>
 

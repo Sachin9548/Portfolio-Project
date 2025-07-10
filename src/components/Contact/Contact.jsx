@@ -22,19 +22,22 @@ export default function Contact() {
               </a> */}
             </article>
 
-            <article className="option">
+           {/* 
+           <article className="option">
               <FaLinkedin />
               <h4>Linked In</h4>
               <h5>Sachin Meshram</h5>
-              {/* <a href="https://m.me/uninc id" target="_blank">
+              {/*
+              <a href="https://m.me/uninc id" target="_blank">
                 send the message
-              </a> */}
+              </a> 
             </article>
+          */}
 
             <article class="option">
               <FaWhatsapp />
               <h4>whatsapp</h4>
-              <h5>+91 8805155743</h5>
+              <h5>+91 9421095835</h5>
               {/* <a
                 href="https://api.whatsapp.com/send?phone=+918805155743"
                 target="_blank"
@@ -44,22 +47,22 @@ export default function Contact() {
             </article>
           </div>
           {/* <!-- section two --> */}
-          <form action="">
+          <form action="https://formspree.io/f/xrgwyoza" method="POST">
             <input
               type="text"
               name="name"
-              placeholder="enter your name"
+              placeholder="Enter Your Name"
               required
             />
-            <input type="email" name="name" placeholder="your email" required />
+            <input type="email" name="email" placeholder="Your Email" required />
             <textarea
-              name="meassage"
+              name="message"
               rows="7"
-              placeholder="your meassage"
+              placeholder="Meassage"
               required
             ></textarea>
-            <button type="submit" className="btn btn-primary">
-              send meassage
+            <button type="submit" name="submit" className="btn btn-primary">
+              Send Meassage
             </button>
           </form>
         </div>

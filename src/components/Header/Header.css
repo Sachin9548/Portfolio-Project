@@ -73,20 +73,28 @@ header {
     right: 30%;
     width: 40%;
   }
-}
+}  
 /* small devices */
 
 @media screen and (max-width: 600px) {
   header {
     height: 100vh;
+    padding-top: 2rem;
+  }
+  .cta {
+    margin-top: 2rem;
   }
   .header_socials,
   .scroll_down {
     display: none;
   }
   .me {
+     margin-top: 2rem;
     left: 5%;
     right: 5%;
-    width: 90%;
+    width: 80%;
+  }
+  .displaynoneinmobile{
+    display:none;
   }
 }
