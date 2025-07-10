@@ -14,7 +14,7 @@ export const FrontData=[
     detail:" This project aims to build the online html,css,js, compiler using core web development technologies. By building this project, I’ll gain practical experience and enhance my skills in HTML, CSS, and JavaScript.",
     Tech:"Html,CSS,JS",
     github:"https://github.com/Sachin9548/html-css-js-compiler",
-    live:"html-css-js-compiler-omega.vercel.app"
+    live:"https://html-css-js-compiler-omega.vercel.app"
     
   },
    {
@@ -24,7 +24,7 @@ export const FrontData=[
     detail:"  This project aims to replicate the popular e-commerce platform, Amazon, using core web development technologies. By building this clone, I’ll gain practical experience and enhance my skills in HTML, CSS, and JavaScript.",
     Tech:"Html,CSS,JS",
     github:"https://github.com/Sachin9548/amazonclone",
-    live:"amazonclone-omega2.vercel.app"
+    live:"https://amazonclone-omega2.vercel.app"
     
   },
   {
@@ -34,7 +34,7 @@ export const FrontData=[
     detail:" This project aims to replicate the popular spotify platform, using core web development technologies. By building this clone, I’ll gain practical experience and enhance my skills in HTML, CSS, and JavaScript.",
     Tech:"Html,CSS,JS",
     github:"https://github.com/Sachin9548/spotify-clone",
-    live:"spotify-clone-omega2.vercel.app"
+    live:"https://spotify-clone-omega2.vercel.app"
     
   },
    {
@@ -44,7 +44,7 @@ export const FrontData=[
     detail:" This project aims to replicate the popular e-commerce platform,  Myntra, using core web development technologies. By building this clone, I’ll gain practical experience and enhance my skills in HTML, CSS, and JavaScript.",
     Tech:"Html,CSS,JS",
     github:"https://github.com/Sachin9548/myntraproject",
-    live:"myntraproject-omega2.vercel.app"
+    live:"https://myntraproject-omega2.vercel.app"
     
   },
    {
@@ -54,7 +54,7 @@ export const FrontData=[
     detail:" This project aims to build the online game, using core web development technologies. By building this clone, I’ll gain practical experience and enhance my skills in HTML, CSS, and JavaScript.",
     Tech:"Html,CSS,JS",
     github:"https://github.com/Sachin9548/TikTakTo",
-    live:"tik-tak-to-flax.vercel.app"
+    live:"https://tik-tak-to-flax.vercel.app"
     
   },
      {
@@ -64,7 +64,7 @@ export const FrontData=[
     detail:" This project aims to build the online game, using core web development technologies. By building this clone, I’ll gain practical experience and enhance my skills in HTML, CSS, and JavaScript.",
     Tech:"Html,CSS,JS",
     github:"https://github.com/Sachin9548/stonepaperciser",
-    live:"stonepaperciser.vercel.app"
+    live:"https://stonepaperciser.vercel.app"
     
   }
 
