@@ -36,7 +36,7 @@ export const FullStackData=[
     detail:"User Authentication: Secure registration and login functionality for students and instructors.A comprehensive list of courses available for students to enroll in.",
     Tech:" Html, CSS, JavaScript, Node.js, Express.js, MongoDB",
     github:"https://github.com/Sachin9548/Guidopedia01",
-    live:"https://guidopedia.glitch.me/"
+    live:"https://guidopedia01.onrender.com/"
     
   }
   
