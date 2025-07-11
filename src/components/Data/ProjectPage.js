@@ -26,7 +26,7 @@ export const ProjectData=[
     detail:" The primary purpose of this application is to facilitate the easy and secure sharing of files among users. It allows users to upload, download, and manage files in a centralized location. Users can upload files to the server and download them when needed.",
     Tech:" Html, CSS, JavaScript, Node.js, Express.js, MongoDB",
     github:"https://github.com/Sachin9548/File-Sharing-App",
-    live:"https://filesharingapp.glitch.me/"
+    live:"https://file-sharing-app-n8iz.onrender.com/"
     
   },
 ]
