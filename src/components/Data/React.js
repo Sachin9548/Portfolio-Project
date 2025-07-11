@@ -6,7 +6,7 @@ export const ReactData=[
     detail:"Users can simulate various types of API requests, including GET,POST, PUT, DELETE , etc. Users can simulate different error scenarios to understand how their APIs behave under various conditions",
     Tech:"Html,CSS, Bootstrap, React.js",
     github:"https://github.com/Sachin9548/Api-Tester",
-    live:"https://restapitester.glitch.me/"
+    live:"https://api-tester-three.vercel.app/"
     
   }
 ]
