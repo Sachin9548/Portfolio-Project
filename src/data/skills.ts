@@ -162,7 +162,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: "Programming Languages",
-    skills: ["Java", "JavaScript", "TypeScript", "Python"],
+    skills: ["Java (Core · DSA)", "JavaScript", "TypeScript", "Python"],
   },
   {
     title: "Databases & Storage",

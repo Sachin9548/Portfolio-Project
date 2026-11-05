@@ -105,8 +105,9 @@ export const featuredProjects: FeaturedProject[] = [
       { label: "Shopify App Store listing", url: "https://apps.shopify.com/profit-first-v1" },
     ],
     media: {
-      alt: "Profit First product screenshot — replace with a real product screenshot",
-      caption: "Media slot — replace with a real product screenshot before publishing.",
+      alt: "Profit First dashboard — business intelligence platform",
+      caption: "Profit First — unified business intelligence dashboard.",
+      src: "/profit-first.png",
     },
     context:
       "Business owners sell across Shopify, WordPress, and advertise on Meta and Google — but their real net profit (after COGS, GST, shipping costs, returns, ad spend, and expenses) is scattered across 6-7 platforms that don't talk to each other.",
@@ -420,8 +421,9 @@ export const featuredProjects: FeaturedProject[] = [
     accent: "violet",
     links: [{ label: "Visit product", url: "https://ads.profitfirstanalytics.com/" }],
     media: {
-      alt: "Ads Manager product screenshot — replace with a real product screenshot",
-      caption: "Media slot — replace with a real product screenshot before publishing.",
+      alt: "Ads Manager — advertising analytics platform",
+      caption: "Ads Manager — campaign management and performance dashboard.",
+      src: "/ads-manager.png",
     },
     context:
       "Advertising teams juggle campaign configuration, launch and performance analysis across separate tools — and browser-based conversion tracking keeps losing sight of what actually converted.",
@@ -681,8 +683,9 @@ export const featuredProjects: FeaturedProject[] = [
     accent: "cyan",
     links: [{ label: "Shopify App Store listing", url: "https://apps.shopify.com/see-before-buy-ai-full" }],
     media: {
-      alt: "See Before Buy product screenshot — replace with a real product screenshot",
-      caption: "Media slot — replace with a real product screenshot before publishing.",
+      alt: "See Before Buy — AI virtual try-on Shopify app",
+      caption: "See Before Buy — product visualization experience in the Shopify storefront.",
+      src: "/see-before-buy.png",
     },
     context:
       "E-commerce shoppers buy products they can't physically try — clothing, accessories, home decor — which results in hesitation at checkout and high return rates after delivery.",
@@ -886,8 +889,9 @@ export const featuredProjects: FeaturedProject[] = [
     accent: "warm",
     links: [{ label: "Visit product", url: "https://www.wautomation.shop/" }],
     media: {
-      alt: "WhatsApp Automation product screenshot — replace with a real product screenshot",
-      caption: "Media slot — replace with a real product screenshot before publishing.",
+      alt: "WAutomation — WhatsApp automation platform",
+      caption: "WAutomation — revenue-oriented WhatsApp automation for Shopify merchants.",
+      src: "/wautomation.png",
     },
     context:
       "Abandoned carts, order questions and follow-ups demand personal, timely communication that no support team can scale by hand.",

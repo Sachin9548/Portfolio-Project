@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Mail, Linkedin, Github, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, Linkedin, Github, Phone, MapPin, ArrowUpRight, ArrowRight, Download } from "lucide-react";
 import { profile } from "@/data/profile";
 import { codingProfiles } from "@/data/codingProfiles";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/Reveal";
@@ -11,14 +11,10 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Get in touch with Sachin Meshram — backend and full-stack software engineer in Nagpur, India. Email, phone, LinkedIn and GitHub.",
+          "Get in touch with Sachin Meshram — Senior Software Engineer in Nagpur, India. Open to backend engineering roles at product companies.",
       },
       { property: "og:title", content: "Contact — Sachin Meshram" },
-      {
-        property: "og:description",
-        content:
-          "Open to conversations about backend, cloud and AI engineering. Reach me by email, phone, LinkedIn or GitHub.",
-      },
+      { property: "og:description", content: "Open to backend, cloud, and AI engineering conversations. Based in Nagpur, open to remote." },
       { property: "og:url", content: "/contact" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -35,7 +31,10 @@ function ContactPage() {
       label: "Email",
       value: profile.email,
       href: `mailto:${profile.email}`,
-      note: "Usually the fastest way to reach me.",
+      note: "Best way to reach me. I reply to every genuine message.",
+      accent: "text-accent-cyan",
+      border: "border-accent-cyan/30",
+      bg: "bg-accent-cyan/5",
     },
     {
       icon: Phone,
@@ -43,6 +42,10 @@ function ContactPage() {
       value: profile.phone,
       href: `tel:+91${profile.phone}`,
       note: "Available on call and WhatsApp.",
+      accent: "text-accent-blue",
+      border: "border-accent-blue/30",
+      bg: "bg-accent-blue/5",
+      external: false,
     },
     {
       icon: Linkedin,
@@ -50,6 +53,9 @@ function ContactPage() {
       value: "/in/sachin-meshram248",
       href: profile.linkedin,
       note: "For professional messages and connection requests.",
+      accent: "text-accent-blue",
+      border: "border-accent-blue/30",
+      bg: "bg-accent-blue/5",
       external: true,
     },
     {
@@ -57,7 +63,10 @@ function ContactPage() {
       label: "GitHub",
       value: "@Sachin9548",
       href: profile.github,
-      note: "Code, experiments and contributions.",
+      note: "Code, open source, and experiments.",
+      accent: "text-accent-violet",
+      border: "border-accent-violet/30",
+      bg: "bg-accent-violet/5",
       external: true,
     },
   ];
@@ -65,17 +74,21 @@ function ContactPage() {
   return (
     <div className="ambient-top">
       <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20">
+
+        {/* ── Header ── */}
         <header className="max-w-2xl">
           <p className="mono-label">contact</p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-5xl">
             Let's build something real.
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Open to backend engineering roles at product companies where the work is real — SaaS,
-            e-commerce, AI-powered systems. Based in Nagpur, open to remote. I reply to every genuine message.
+            Open to backend engineering roles at product companies where the work is
+            real — SaaS, e-commerce, AI-powered systems. Based in Nagpur, open to remote.
+            I reply to every genuine message.
           </p>
         </header>
 
+        {/* ── Contact channels ── */}
         <Stagger className="mt-10 grid gap-3 sm:grid-cols-2">
           {channels.map((c) => {
             const Icon = c.icon;
@@ -83,22 +96,17 @@ function ContactPage() {
               <StaggerItem key={c.label}>
                 <a
                   href={c.href}
-                  {...("external" in c && c.external
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                  className="group flex h-full flex-col rounded-xl border border-border/70 bg-surface-1/50 p-5 transition-colors hover:bg-surface-2/60"
+                  {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className={"group flex h-full flex-col rounded-xl border p-5 transition-colors hover:bg-surface-2/60 " + c.border + " " + c.bg}
                 >
                   <div className="flex items-center justify-between gap-2">
-                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-foreground">
-                      <Icon className="size-4 text-accent-cyan" aria-hidden />
+                    <span className={"inline-flex items-center gap-2 text-sm font-semibold " + c.accent}>
+                      <Icon className="size-4" aria-hidden />
                       {c.label}
                     </span>
-                    {"external" in c && c.external ? (
-                      <ArrowUpRight
-                        className="size-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                        aria-hidden
-                      />
-                    ) : null}
+                    {c.external && (
+                      <ArrowUpRight className="size-4 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden />
+                    )}
                   </div>
                   <p className="mt-2 break-all font-mono text-sm text-foreground/90">{c.value}</p>
                   <p className="mt-2 text-xs text-muted-foreground">{c.note}</p>
@@ -108,48 +116,101 @@ function ContactPage() {
           })}
         </Stagger>
 
+        {/* ── Resume ── */}
+        {profile.resume.available && (
+          <Reveal className="mt-8">
+            <a
+              href={profile.resume.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-border/70 bg-surface-1/50 px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-2/60"
+            >
+              <Download className="size-4 text-accent-cyan" aria-hidden />
+              Download Resume (PDF)
+            </a>
+          </Reveal>
+        )}
+
+        {/* ── Good conversations to have ── */}
         <Reveal className="mt-12 rounded-xl border border-border/70 bg-surface-1/50 p-6">
           <p className="mono-label">good conversations to have</p>
-          <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-muted-foreground">
-            <li className="flex gap-2.5">
-              <span aria-hidden className="mt-1.5 size-1.5 flex-none rounded-full bg-accent-blue" />
-              Backend or full-stack engineering roles where the work is real
-              product development.
-            </li>
-            <li className="flex gap-2.5">
-              <span aria-hidden className="mt-1.5 size-1.5 flex-none rounded-full bg-accent-cyan" />
-              Building or scaling a Shopify / Meta / e-commerce integration.
-            </li>
-            <li className="flex gap-2.5">
-              <span aria-hidden className="mt-1.5 size-1.5 flex-none rounded-full bg-accent-violet" />
-              Adding AI features that are grounded in actual data, not demos.
-            </li>
+          <ul className="mt-4 space-y-3">
+            {[
+              {
+                text: "Backend or full-stack engineering roles at a product company where the work is real — not just maintenance.",
+                dot: "bg-accent-blue",
+              },
+              {
+                text: "Building or scaling a Shopify / Meta / e-commerce integration that needs serious backend engineering.",
+                dot: "bg-accent-cyan",
+              },
+              {
+                text: "Adding AI features grounded in actual business data — RAG pipelines, not demos.",
+                dot: "bg-accent-violet",
+              },
+              {
+                text: "SaaS product companies in the 50–200 employee range looking for a senior backend engineer.",
+                dot: "bg-accent-warm",
+              },
+            ].map((item) => (
+              <li key={item.text} className="flex gap-3">
+                <span className={"mt-1.5 size-1.5 flex-none rounded-full " + item.dot} aria-hidden />
+                <p className="text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+              </li>
+            ))}
           </ul>
         </Reveal>
 
+        {/* ── Coding profiles ── */}
+        <Reveal className="mt-12">
+          <p className="mono-label">also find me on</p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            {codingProfiles.map((p) => (
+              <a
+                key={p.name}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-border/70 bg-surface-1/50 px-4 py-2.5 text-sm transition-colors hover:bg-surface-2/60"
+              >
+                <span className="font-medium text-foreground">{p.name}</span>
+                {p.badge && (
+                  <span className="mono-label rounded-full border border-accent-cyan/40 px-1.5 py-0.5 text-[10px]">
+                    {p.badge}
+                  </span>
+                )}
+                <ArrowUpRight className="size-3.5 text-muted-foreground" aria-hidden />
+              </a>
+            ))}
+          </div>
+        </Reveal>
+
+        {/* ── Location + nav ── */}
         <Reveal className="mt-12 border-t border-border/60 pt-8">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <p className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-              <MapPin className="size-3.5" aria-hidden /> {profile.location}
+              <MapPin className="size-3.5" aria-hidden />
+              {profile.location} · Open to remote
             </p>
-            <div className="flex flex-wrap items-center gap-4">
-              {codingProfiles.map((p) => (
-                <a
-                  key={p.name}
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {p.name}
-                </a>
-              ))}
-              <Link to="/projects" className="text-sm font-medium text-foreground hover:underline">
-                Or start with the work →
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/projects"
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                View my work
+                <ArrowRight className="size-3.5" aria-hidden />
+              </Link>
+              <Link
+                to="/experience"
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Experience
+                <ArrowRight className="size-3.5" aria-hidden />
               </Link>
             </div>
           </div>
         </Reveal>
+
       </div>
     </div>
   );

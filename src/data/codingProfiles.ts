@@ -10,14 +10,14 @@ export const codingProfiles: CodingProfile[] = [
   {
     name: "HackerRank",
     url: "https://www.hackerrank.com/profile/sachinm9548",
-    detail: "Problem-solving practice across algorithms and data structures.",
-    badge: "5-Star Problem Solving",
+    detail: "5-Star rating in Java — algorithms and data structures problem solving.",
+    badge: "5-Star Java",
     verified: true,
   },
   {
     name: "GeeksforGeeks",
     url: "https://www.geeksforgeeks.org/profile/sachinkhjk",
-    detail: "Consistent practice, including active participation in Problem of the Day.",
+    detail: "150+ problems solved. Active Problem of the Day participant.",
     badge: "150+ problems solved",
     verified: true,
   },

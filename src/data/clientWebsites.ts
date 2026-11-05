@@ -8,7 +8,6 @@ import clovellea from "@/assets/sites/clovellea.jpg";
 import panemorfos from "@/assets/sites/panemorfos.jpg";
 import vmpCollections from "@/assets/sites/vmp-collections.jpg";
 import biesca from "@/assets/sites/biesca.jpg";
-
 export type ClientWebsiteCategory = "Custom-coded" | "Shopify e-commerce";
 
 export interface ClientWebsite {
@@ -90,5 +89,33 @@ export const clientWebsites: ClientWebsite[] = [
     category: "Shopify e-commerce",
     preview: biesca,
     previewAlt: "Homepage preview of the Biesca online store",
+  },
+  {
+    name: "Vaaki",
+    url: "https://www.vaaki.com/",
+    category: "Shopify e-commerce",
+    preview: "/sites/vaaki.png",
+    previewAlt: "Homepage preview of the Vaaki online store",
+  },
+  {
+    name: "Clay Store",
+    url: "https://claystore.co.in/",
+    category: "Shopify e-commerce",
+    preview: "/sites/claystore.png",
+    previewAlt: "Homepage preview of the Clay Store online store",
+  },
+  {
+    name: "Parts Pick",
+    url: "https://www.partspick.in/",
+    category: "Shopify e-commerce",
+    preview: "/sites/partspick.png",
+    previewAlt: "Homepage preview of the Parts Pick online store",
+  },
+  {
+    name: "Kosei Moissanites",
+    url: "https://koseimoissanites.com/",
+    category: "Shopify e-commerce",
+    preview: "/sites/kosei-moissanites.png",
+    previewAlt: "Homepage preview of the Kosei Moissanites online store",
   },
 ];

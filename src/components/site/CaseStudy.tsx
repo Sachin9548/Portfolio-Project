@@ -1,9 +1,8 @@
-import { Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+﻿import { Link } from "@tanstack/react-router";
+import { ArrowRight, ArrowUpRight, ExternalLink } from "lucide-react";
 import type { FeaturedProject } from "@/data/projects";
 import { featuredProjects } from "@/data/projects";
 import { DataFlowDiagram } from "@/components/diagrams/DataFlowDiagram";
-import { MediaSlot } from "@/components/site/MediaSlot";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/Reveal";
 import { accentClasses } from "@/lib/accent";
 import { projectRoute } from "@/lib/links";
@@ -17,22 +16,18 @@ function InfoBlock({ label, text }: { label: string; text: string }) {
   );
 }
 
-/**
- * Shared case-study layout: intro, context, contribution, animated
- * architecture, narrative, decisions, stack, challenges, reported results,
- * media slot, live links and related capabilities.
- */
 export function CaseStudy({ project }: { project: FeaturedProject }) {
   const a = accentClasses(project.accent);
   const idx = featuredProjects.findIndex((p) => p.id === project.id);
-  const next =
-    featuredProjects[(idx + 1) % featuredProjects.length] ?? project;
+  const next = featuredProjects[(idx + 1) % featuredProjects.length] ?? project;
 
   return (
     <article className="ambient-top">
       <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20">
+
+        {/* â”€â”€ Header â”€â”€ */}
         <header>
-          <p className="mono-label">case study · {project.kind}</p>
+          <p className="mono-label">case study Â· {project.kind}</p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-5xl">
             {project.name}
           </h1>
@@ -40,7 +35,7 @@ export function CaseStudy({ project }: { project: FeaturedProject }) {
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
             {project.positioning}
           </p>
-          <div className="mt-6 flex flex-wrap gap-2">
+          <div className="mt-5 flex flex-wrap gap-2">
             {project.links.map((l) => (
               <a
                 key={l.url}
@@ -53,25 +48,35 @@ export function CaseStudy({ project }: { project: FeaturedProject }) {
                 }
               >
                 {l.label}
-                <ArrowUpRight className="size-3.5" aria-hidden />
+                <ExternalLink className="size-3" aria-hidden />
               </a>
             ))}
           </div>
         </header>
 
-        <MediaSlot
-          alt={project.media.alt}
-          caption={project.media.caption}
-          src={project.media.src}
-          className="mt-10"
-        />
+        {/* â”€â”€ Hero screenshot â”€â”€ */}
+        {project.media.src && (
+          <Reveal className="mt-10 overflow-hidden rounded-2xl border border-border/70 bg-surface-1">
+            <img
+              src={project.media.src}
+              alt={project.media.alt}
+              loading="lazy"
+              className="w-full object-cover object-top"
+            />
+            {project.media.caption && (
+              <p className="mono-label px-4 py-2">{project.media.caption}</p>
+            )}
+          </Reveal>
+        )}
 
+        {/* â”€â”€ Context / Problem / Role â”€â”€ */}
         <Reveal className="mt-12 grid gap-4 sm:grid-cols-3">
           <InfoBlock label="Context" text={project.context} />
           <InfoBlock label="Problem" text={project.problem} />
           <InfoBlock label="My role" text={project.myRole} />
         </Reveal>
 
+        {/* â”€â”€ Contributions â”€â”€ */}
         <Reveal className="mt-12">
           <p className="mono-label">My contribution</p>
           <Stagger className="mt-4 grid gap-2.5 sm:grid-cols-2">
@@ -87,14 +92,14 @@ export function CaseStudy({ project }: { project: FeaturedProject }) {
           </Stagger>
         </Reveal>
 
+        {/* â”€â”€ Architecture diagrams â”€â”€ */}
         <Reveal className="mt-14">
           <p className="mono-label">Architecture</p>
           <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground">
             How the system works
           </h2>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-            Live diagrams, not screenshots — click any stage to expand what happens
-            at that point in the flow.
+            Live diagrams â€” click any stage to expand what happens at that point in the flow.
           </p>
         </Reveal>
         <div className="mt-6 space-y-8">
@@ -103,25 +108,23 @@ export function CaseStudy({ project }: { project: FeaturedProject }) {
           ))}
         </div>
 
-        {project.journeys && project.journeys.length > 0 ? (
+        {/* â”€â”€ User journeys â”€â”€ */}
+        {project.journeys && project.journeys.length > 0 && (
           <Reveal className="mt-14">
             <p className="mono-label">User journey</p>
             <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground">
               How people move through the product
             </h2>
-            <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-              The flows users actually follow — from first action to the outcome
-              the system delivers.
-            </p>
             <div className="mt-6 space-y-8">
               {project.journeys.map((spec) => (
                 <DataFlowDiagram key={spec.title} spec={spec} accent={project.accent} />
               ))}
             </div>
           </Reveal>
-        ) : null}
+        )}
 
-        {project.narrative ? (
+        {/* â”€â”€ Narrative â”€â”€ */}
+        {project.narrative && (
           <Reveal className="mt-14 rounded-xl border border-border/70 bg-surface-1/50 p-6 sm:p-8">
             <p className="mono-label">Engineering narrative</p>
             <h2 className="mt-2 text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
@@ -135,11 +138,14 @@ export function CaseStudy({ project }: { project: FeaturedProject }) {
               ))}
             </div>
           </Reveal>
-        ) : null}
+        )}
 
+        {/* â”€â”€ Decisions â”€â”€ */}
         <Reveal className="mt-14">
           <p className="mono-label">Engineering decisions</p>
-          <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground">Why it's built this way</h2>
+          <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground">
+            Why it's built this way
+          </h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {project.decisions.map((d) => (
               <div key={d.title} className={"rounded-xl border bg-surface-1/50 p-4 " + a.border}>
@@ -150,8 +156,9 @@ export function CaseStudy({ project }: { project: FeaturedProject }) {
           </div>
         </Reveal>
 
+        {/* â”€â”€ Stack â”€â”€ */}
         <Reveal className="mt-12">
-          <p className="mono-label">Stack</p>
+          <p className="mono-label">Tech stack</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {project.stack.map((s) => (
               <span
@@ -164,14 +171,15 @@ export function CaseStudy({ project }: { project: FeaturedProject }) {
           </div>
         </Reveal>
 
+        {/* â”€â”€ Challenges â”€â”€ */}
         <Reveal className="mt-12">
           <p className="mono-label">Challenges &amp; solutions</p>
           <ul className="mt-4 space-y-3">
             {project.challenges.map((c) => (
               <li key={c.challenge} className="rounded-xl border border-border/70 bg-surface-1/50 p-5">
-                <p className="text-sm font-medium text-foreground">{c.challenge}</p>
+                <p className="text-sm font-semibold text-foreground">{c.challenge}</p>
                 <p className="mt-2 flex gap-2 text-sm leading-relaxed text-muted-foreground">
-                  <span className={"mt-0.5 flex-none font-mono text-xs " + a.text}>fix</span>
+                  <span className={"mt-0.5 flex-none font-mono text-xs font-semibold " + a.text}>â†’</span>
                   {c.solution}
                 </p>
               </li>
@@ -179,21 +187,26 @@ export function CaseStudy({ project }: { project: FeaturedProject }) {
           </ul>
         </Reveal>
 
-        {project.results.length > 0 ? (
+        {/* â”€â”€ Results â”€â”€ */}
+        {project.results.length > 0 && (
           <Reveal className="mt-12">
             <p className="mono-label">Reported results</p>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <p className="mt-1 text-xs text-muted-foreground">
+              Figures below are reported outcomes â€” labeled as such, not independently benchmarked.
+            </p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-3">
               {project.results.map((r) => (
                 <div key={r.label} className="rounded-xl border border-border/70 bg-surface-1/50 p-5">
                   <p className={"text-3xl font-bold tracking-tight " + a.text}>{r.value}</p>
-                  <p className="mt-1 text-sm text-foreground/90">{r.label}</p>
+                  <p className="mt-1 text-sm font-medium text-foreground/90">{r.label}</p>
                   <p className="mono-label mt-2 normal-case leading-relaxed">{r.note}</p>
                 </div>
               ))}
             </div>
           </Reveal>
-        ) : null}
+        )}
 
+        {/* â”€â”€ Related capabilities â”€â”€ */}
         <Reveal className="mt-12">
           <p className="mono-label">Related capabilities</p>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -201,7 +214,7 @@ export function CaseStudy({ project }: { project: FeaturedProject }) {
               <Link
                 key={cap}
                 to="/engineering"
-                className={"rounded-full border px-3 py-1 text-xs transition-colors " + a.chip + " " + a.hoverBorder}
+                className={"rounded-full border px-3 py-1 text-xs transition-colors hover:opacity-80 " + a.chip}
               >
                 {cap}
               </Link>
@@ -209,10 +222,11 @@ export function CaseStudy({ project }: { project: FeaturedProject }) {
           </div>
         </Reveal>
 
+        {/* â”€â”€ Next case study â”€â”€ */}
         <nav aria-label="Next case study" className="mt-16 border-t border-border/60 pt-8">
           <Link
             to={projectRoute(next.id)}
-            className="group flex items-center justify-between gap-4 rounded-xl border border-border/70 bg-surface-1/50 p-5 transition-colors hover:border-border"
+            className="group flex items-center justify-between gap-4 rounded-xl border border-border/70 bg-surface-1/50 p-5 transition-colors hover:border-border hover:bg-surface-2/60"
           >
             <span>
               <span className="mono-label block">Next case study</span>
@@ -225,6 +239,7 @@ export function CaseStudy({ project }: { project: FeaturedProject }) {
             />
           </Link>
         </nav>
+
       </div>
     </article>
   );

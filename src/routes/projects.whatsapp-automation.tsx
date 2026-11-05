@@ -5,17 +5,17 @@ import { CaseStudy } from "@/components/site/CaseStudy";
 export const Route = createFileRoute("/projects/whatsapp-automation")({
   head: () => ({
     meta: [
-      { title: "AI-Powered WhatsApp Automation — Case Study | Sachin Meshram" },
+      { title: "WAutomation — Case Study | Sachin Meshram" },
       {
         name: "description",
         content:
-          "A WhatsApp automation platform on Shopify webhooks: context-aware recovery and retargeting workflows delivered through event-driven messaging pipelines.",
+          "WAutomation — a revenue-oriented WhatsApp automation platform: abandoned cart recovery, customer retargeting, and AI-powered support built on Shopify webhooks.",
       },
-      { property: "og:title", content: "AI-Powered WhatsApp Automation — Case Study | Sachin Meshram" },
+      { property: "og:title", content: "WAutomation — Case Study | Sachin Meshram" },
       {
         property: "og:description",
         content:
-          "Recover customers with conversations, not one-off blasts — event-driven messaging built on verified Shopify webhooks.",
+          "Turn Shopify events into revenue through WhatsApp — event-driven messaging, recovery flows and AI sales agent.",
       },
       { property: "og:url", content: "/projects/whatsapp-automation" },
       { property: "og:type", content: "article" },

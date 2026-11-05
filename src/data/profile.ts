@@ -20,10 +20,9 @@ export const profile = {
   // Portrait uploaded via Lovable Assets — used in the hero and about page.
   portraitSrc: "/portrait.jpg",
   resume: {
-    // Set available to true and add the CDN url once the resume PDF is uploaded.
-    available: false as boolean,
+    available: true as boolean,
     label: "Download Resume",
-    url: "" as string,
+    url: "/Sachin_Meshram_Resume.pdf" as string,
   },
   // Subtle indicator — does not claim active availability.
   availability: {

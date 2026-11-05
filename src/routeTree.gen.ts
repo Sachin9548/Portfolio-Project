@@ -16,6 +16,7 @@ import { Route as EngineeringRouteImport } from './routes/engineering'
 import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
 import { Route as ProjectsAdsManagerRouteImport } from './routes/projects.ads-manager'
+import { Route as ProjectsProfitFirstRouteImport } from './routes/projects.profit-first'
 import { Route as ProjectsSeeBeforeBuyRouteImport } from './routes/projects.see-before-buy'
 import { Route as ProjectsWhatsappAutomationRouteImport } from './routes/projects.whatsapp-automation'
 
@@ -54,6 +55,11 @@ const ProjectsAdsManagerRoute = ProjectsAdsManagerRouteImport.update({
   path: '/projects/ads-manager',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsProfitFirstRoute = ProjectsProfitFirstRouteImport.update({
+  id: '/projects/profit-first',
+  path: '/projects/profit-first',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectsSeeBeforeBuyRoute = ProjectsSeeBeforeBuyRouteImport.update({
   id: '/projects/see-before-buy',
   path: '/projects/see-before-buy',
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/engineering': typeof EngineeringRoute
   '/experience': typeof ExperienceRoute
   '/projects/ads-manager': typeof ProjectsAdsManagerRoute
+  '/projects/profit-first': typeof ProjectsProfitFirstRoute
   '/projects/see-before-buy': typeof ProjectsSeeBeforeBuyRoute
   '/projects/whatsapp-automation': typeof ProjectsWhatsappAutomationRoute
   '/projects/': typeof ProjectsIndexRoute
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/engineering': typeof EngineeringRoute
   '/experience': typeof ExperienceRoute
   '/projects/ads-manager': typeof ProjectsAdsManagerRoute
+  '/projects/profit-first': typeof ProjectsProfitFirstRoute
   '/projects/see-before-buy': typeof ProjectsSeeBeforeBuyRoute
   '/projects/whatsapp-automation': typeof ProjectsWhatsappAutomationRoute
   '/projects': typeof ProjectsIndexRoute
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   '/engineering': typeof EngineeringRoute
   '/experience': typeof ExperienceRoute
   '/projects/ads-manager': typeof ProjectsAdsManagerRoute
+  '/projects/profit-first': typeof ProjectsProfitFirstRoute
   '/projects/see-before-buy': typeof ProjectsSeeBeforeBuyRoute
   '/projects/whatsapp-automation': typeof ProjectsWhatsappAutomationRoute
   '/projects/': typeof ProjectsIndexRoute
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/engineering'
     | '/experience'
     | '/projects/ads-manager'
+    | '/projects/profit-first'
     | '/projects/see-before-buy'
     | '/projects/whatsapp-automation'
     | '/projects/'
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/engineering'
     | '/experience'
     | '/projects/ads-manager'
+    | '/projects/profit-first'
     | '/projects/see-before-buy'
     | '/projects/whatsapp-automation'
     | '/projects'
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/engineering'
     | '/experience'
     | '/projects/ads-manager'
+    | '/projects/profit-first'
     | '/projects/see-before-buy'
     | '/projects/whatsapp-automation'
     | '/projects/'
@@ -143,6 +155,7 @@ export interface RootRouteChildren {
   EngineeringRoute: typeof EngineeringRoute
   ExperienceRoute: typeof ExperienceRoute
   ProjectsAdsManagerRoute: typeof ProjectsAdsManagerRoute
+  ProjectsProfitFirstRoute: typeof ProjectsProfitFirstRoute
   ProjectsSeeBeforeBuyRoute: typeof ProjectsSeeBeforeBuyRoute
   ProjectsWhatsappAutomationRoute: typeof ProjectsWhatsappAutomationRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
@@ -199,6 +212,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsAdsManagerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/profit-first': {
+      id: '/projects/profit-first'
+      path: '/projects/profit-first'
+      fullPath: '/projects/profit-first'
+      preLoaderRoute: typeof ProjectsProfitFirstRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projects/see-before-buy': {
       id: '/projects/see-before-buy'
       path: '/projects/see-before-buy'
@@ -223,6 +243,7 @@ const rootRouteChildren: RootRouteChildren = {
   EngineeringRoute: EngineeringRoute,
   ExperienceRoute: ExperienceRoute,
   ProjectsAdsManagerRoute: ProjectsAdsManagerRoute,
+  ProjectsProfitFirstRoute: ProjectsProfitFirstRoute,
   ProjectsSeeBeforeBuyRoute: ProjectsSeeBeforeBuyRoute,
   ProjectsWhatsappAutomationRoute: ProjectsWhatsappAutomationRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
