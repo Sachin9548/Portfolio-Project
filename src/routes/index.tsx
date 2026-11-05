@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Mail, MapPin, Github, Linkedin } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Mail, MapPin, Github, Linkedin, Download } from "lucide-react";
 import { profile } from "@/data/profile";
 import { featuredProjects } from "@/data/projects";
 import { domains } from "@/data/skills";
@@ -81,6 +81,17 @@ function HomePage() {
               >
                 View Engineering
               </Link>
+              {profile.resume.available && (
+                <a
+                  href={profile.resume.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md border border-border/80 bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+                >
+                  <Download className="size-4" aria-hidden />
+                  Resume
+                </a>
+              )}
             </div>
 
             <div className="mt-7 flex flex-wrap items-center gap-2">

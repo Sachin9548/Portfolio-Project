@@ -16,7 +16,7 @@ export const profile = {
   phone: "9421095835",
   linkedin: "https://www.linkedin.com/in/sachin-meshram248",
   github: "https://github.com/Sachin9548",
-  heroStack: ["Node.js", "TypeScript", "AWS", "React Native", "Shopify"],
+  heroStack: ["Node.js", "TypeScript", "NestJS", "React.js", "Next.js", "React Native", "AWS"],
   // Portrait uploaded via Lovable Assets — used in the hero and about page.
   portraitSrc: "/portrait.jpg",
   resume: {
