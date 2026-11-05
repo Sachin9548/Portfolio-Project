@@ -3,10 +3,10 @@ import mbcIndustries from "@/assets/sites/mbc-industries.jpg";
 import sevenSeasJaggery from "@/assets/sites/seven-seas-jaggery.jpg";
 import evidentHealthcare from "@/assets/sites/evident-healthcare.jpg";
 import bmbFactory from "@/assets/sites/bmb-factory.jpg";
-import walkoutWear from "@/assets/sites/walkout-wear.jpg";
-import clovellea from "@/assets/sites/clovellea.jpg";
-import panemorfos from "@/assets/sites/panemorfos.jpg";
-import vmpCollections from "@/assets/sites/vmp-collections.jpg";
+import walkoutWear from "@/assets/sites/walkout-wear.png";
+import clovellea from "@/assets/sites/clovellea.png";
+import panemorfos from "@/assets/sites/panemorfos.png";
+import vmpCollections from "@/assets/sites/vmp-collections.png";
 import biesca from "@/assets/sites/biesca.jpg";
 export type ClientWebsiteCategory = "Custom-coded" | "Shopify e-commerce";
 
